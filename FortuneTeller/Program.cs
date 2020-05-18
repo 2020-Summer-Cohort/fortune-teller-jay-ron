@@ -8,7 +8,7 @@ namespace FortuneTeller
         static void Main(string[] args)
         {
             Console.WriteLine("Hello! Welcome to Fortune Teller");
-
+            StartGame();
 
         }
 
@@ -26,7 +26,10 @@ namespace FortuneTeller
             someUser.LastName = Console.ReadLine();
 
             Console.WriteLine("How old are you?");
-            someUser.Age = Convert.ToInt32(Console.ReadLine());
+
+            int usersAge = Convert.ToInt32(Console.ReadLine());
+            someUser.SetAge(usersAge);
+            Console.WriteLine("Your calculated retirement date is: " + someUser.RetirementDate.ToShortDateString());
 
             Console.WriteLine("Enter the integer to represent the month you were born:");
             someUser.BirthMonth = Convert.ToInt32(Console.ReadLine());
